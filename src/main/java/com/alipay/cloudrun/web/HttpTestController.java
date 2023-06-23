@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * 测试服务访问
  */
@@ -36,6 +38,9 @@ public class HttpTestController {
         String version = System.getenv("PUB_SERVICE_REVISION") == null ? "springboot-demo" : System.getenv("PUB_SERVICE_REVISION");
         String hostName = System.getenv("HOSTNAME") == null ? "springboot-demo" : System.getenv("HOSTNAME");
         String result = "欢迎使用云托管!&服务版本：" + version + "&实例主机：" + hostName;
+        result += "&custom：" + "辰星";
+//        Date now = new Date();
+//        result += "\n 什么意思：" + now;
         return result;
     }
 }
